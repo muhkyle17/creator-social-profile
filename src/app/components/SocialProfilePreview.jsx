@@ -1,5 +1,5 @@
 const SocialProfilePreview = () => {
-  return <div>Social Profile Preview</div>
+  return <div className='bg-white h-full'>Social Profile Preview</div>
 }
 
 export default SocialProfilePreview

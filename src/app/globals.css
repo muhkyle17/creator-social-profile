@@ -19,5 +19,5 @@
 
 body {
   color: var(--background);
-  background: var(--foreground);
+  background: var(--white);
 }
