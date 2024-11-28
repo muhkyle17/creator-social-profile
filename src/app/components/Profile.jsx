@@ -1,6 +1,6 @@
 const Profile = () => {
   return (
-    <div className='p-8 flex flex-row gap-10 justify-around bg-foreground h-full'>
+    <div className='p-8 flex flex-row gap-10 justify-around'>
       <div className='w-[35%]'>
         <h1 className='font-bold text-lg'>Profile</h1>
         <h2 className='opacity-60'>A brief introduction about yourself</h2>

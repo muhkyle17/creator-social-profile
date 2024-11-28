@@ -1,5 +1,5 @@
 const SocialLinks = () => {
-  return <div>Social Links</div>
+  return <div className='p-8'>Social Links</div>
 }
 
 export default SocialLinks
