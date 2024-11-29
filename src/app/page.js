@@ -7,16 +7,12 @@ const Divider = () => <hr className='bg-gray-500 h-[2px] mx-8' />
 
 export default function Home() {
   return (
-    <div className='flex flex-row h-screen'>
+    <div className='flex flex-row h-full'>
       <div className='w-3/4 flex flex-col bg-foreground'>
         <Profile />
-
         <Divider />
-
         <SocialLinks />
-
         <Divider />
-
         <Links />
       </div>
       <div className='w-1/4'>
