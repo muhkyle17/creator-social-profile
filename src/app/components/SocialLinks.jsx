@@ -29,6 +29,10 @@ const SocialLinks = () => {
           <SocialLink inputName='github' labelName='Github' icon={<FaGithub />} />
         </div>
         <div className='flex flex-row gap-10 justify-between'>
+          <SocialLink inputName='telegram' labelName='Telegram' icon={<FaTelegram />} />
+          <SocialLink inputName='linked' labelName='LinkedIn' icon={<FaLinkedin />} />
+        </div>
+        <div className='flex flex-row gap-10 justify-between'>
           <SocialLink inputName='email' labelName='Email' icon={<MdOutlineMailOutline />} />
           <SocialLink inputName='youtube' labelName='Youtube' icon={<FaYoutube />} />
         </div>
