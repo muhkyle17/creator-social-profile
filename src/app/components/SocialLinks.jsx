@@ -1,3 +1,5 @@
+import { FaFacebook } from 'react-icons/fa'
+
 const SocialLinks = () => {
   return (
     <div className='p-8 flex flex-row gap-10 justify-around'>
@@ -11,12 +13,17 @@ const SocialLinks = () => {
             <label htmlFor='facebook' className='text-sm text-gray-700'>
               Facebook
             </label>
-            <input
-              aria-label='Facebook'
-              type='text'
-              name='facebook'
-              className='border border-opacity-20 border-black bg-white rounded-md p-2 text-sm'
-            />
+            <div className='flex flex-row items-center'>
+              <span className='py-2 px-3 rounded-md rounded-r-none border border-opacity-20 border-black'>
+                <FaFacebook className='text-xl' />
+              </span>
+              <input
+                aria-label='Facebook'
+                type='text'
+                name='facebook'
+                className='bg-white p-2 text-sm rounded-md rounded-l-none border-l-0 border border-opacity-20 border-black'
+              />
+            </div>
           </div>
           <div></div>
         </div>
