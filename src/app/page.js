@@ -1,14 +1,23 @@
 import Profile from './components/Profile'
 import SocialProfilePreview from './components/SocialProfilePreview'
 import SocialLinks from './components/SocialLinks'
+import Links from './components/Links'
+
+const Divider = () => <hr className='bg-gray-500 h-[2px] mx-8' />
 
 export default function Home() {
   return (
     <div className='flex flex-row h-screen'>
       <div className='w-3/4 flex flex-col bg-foreground'>
         <Profile />
-        <hr className='bg-gray-500 h-[2px] mx-8' />
+
+        <Divider />
+
         <SocialLinks />
+
+        <Divider />
+
+        <Links />
       </div>
       <div className='w-1/4'>
         <SocialProfilePreview />
