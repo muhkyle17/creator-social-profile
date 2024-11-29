@@ -7,9 +7,8 @@ const SocialLink = ({ inputName, labelName, icon }) => {
         {labelName}
       </label>
       <div className='flex flex-row items-center w-full'>
-        <span className='py-2 px-3 rounded-md rounded-r-none border border-opacity-20 border-black'>
-          <FaFacebook className='text-xl' />
-          {/* {icon} */}
+        <span className='text-xl py-2 px-3 rounded-md rounded-r-none border border-opacity-20 border-black'>
+          {icon}
         </span>
         <input
           aria-label='Social Icons'

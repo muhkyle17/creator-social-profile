@@ -1,4 +1,4 @@
-import { FaFacebook } from 'react-icons/fa'
+import { FaFacebook, FaTwitter } from 'react-icons/fa'
 
 import SocialLink from './SocialLink'
 
@@ -11,13 +11,9 @@ const SocialLinks = () => {
       </div>
       <div className='w-[65%] h-fit bg-white p-6 rounded-lg drop-shadow-lg'>
         <div className='flex flex-row gap-10 justify-between'>
-          <SocialLink inputName='facebook' labelName='Facebook' icon='facebook' />
-          <SocialLink inputName='twitter' labelName='Twitter' icon='facebook' />
+          <SocialLink inputName='facebook' labelName='Facebook' icon={<FaFacebook />} />
+          <SocialLink inputName='twitter' labelName='Twitter' icon={<FaTwitter />} />
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
       </div>
     </div>
   )
