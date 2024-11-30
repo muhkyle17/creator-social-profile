@@ -15,7 +15,7 @@ export default function Home() {
         <Divider />
         <Links />
       </div>
-      <div className='w-1/4 max-h-screen overscroll-none'>
+      <div className='w-1/4 max-h-screen'>
         <SocialProfilePreview />
       </div>
     </div>
