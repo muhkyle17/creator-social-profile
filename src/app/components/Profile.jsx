@@ -5,6 +5,12 @@ const Profile = () => {
   const setProfileName = userDataStore(state => state.setProfileName)
   const setProfileDescription = userDataStore(state => state.setProfileDescription)
   const setPhotoUrl = userDataStore(state => state.setPhotoUrl)
+  const handleChange = (value, e) => {
+    console.log(value, 'value')
+    if (value === 'profileName') setProfileName(e.target.value)
+    if (value === 'description') setProfileDescription(e.target.value)
+    if (value === 'photoUrl') setPhotoUrl(e.target.value)
+  }
 
   return (
     <div className='p-8 flex flex-row gap-10 justify-around'>
@@ -22,7 +28,7 @@ const Profile = () => {
             type='text'
             name='name'
             className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
-            onChange={e => setProfileName(e.target.value)}
+            onChange={e => handleChange('profileName', e)}
           />
         </div>
         <div className='flex flex-col gap-1'>
@@ -35,7 +41,7 @@ const Profile = () => {
             type='text'
             name='description'
             className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
-            onChange={e => setProfileDescription(e.target.value)}
+            onChange={e => handleChange('description', e)}
           />
         </div>
         <div className='flex flex-col gap-1'>
@@ -47,7 +53,7 @@ const Profile = () => {
             type='photoUrl'
             name='name'
             className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
-            onChange={e => setPhotoUrl(e.target.value)}
+            onChange={e => handleChange('photoUrl', e)}
           />
         </div>
       </div>
