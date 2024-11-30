@@ -2,11 +2,8 @@
 import userDataStore from '../hooks/userDataStore'
 
 const Profile = () => {
-  const profileName = userDataStore(state => state.profileName)
   const setProfileName = userDataStore(state => state.setProfileName)
-  const profileDescription = userDataStore(state => state.profileDescription)
   const setProfileDescription = userDataStore(state => state.setProfileDescription)
-  const photoUrl = userDataStore(state => state.photoUrl)
   const setPhotoUrl = userDataStore(state => state.setPhotoUrl)
 
   return (
