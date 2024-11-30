@@ -7,7 +7,9 @@ const Divider = () => <hr className='bg-gray-500 h-[2px] mx-8' />
 
 export default function Home() {
   return (
-    <div className='flex flex-col-reverse items-center justify-center gap-10 min-h-screen overflow-auto xl:bg-red-400 h-full xl:flex-row xl:mt-0'>
+    <div
+      className='flex flex-col-reverse items-center justify-center gap-10 min-h-screen overflow-auto h-full
+      xl:flex-row xl:mt-0'>
       <div
         className='w-full flex flex-col bg-foreground xl:overflow-y-auto min-h-screen h-full
                   xl:w-3/4 xl:h-screen'>
