@@ -5,6 +5,8 @@ const userDataStore = create(set => ({
   setProfileName: profileName => set({ profileName }),
   profileDescription: '',
   setProfileDescription: profileDescription => set({ profileDescription }),
+  photoUrl: '',
+  setPhotoUrl: photoUrl => set({ photoUrl }),
 }))
 
 export default userDataStore

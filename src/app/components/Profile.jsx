@@ -6,9 +6,8 @@ const Profile = () => {
   const setProfileName = userDataStore(state => state.setProfileName)
   const profileDescription = userDataStore(state => state.profileDescription)
   const setProfileDescription = userDataStore(state => state.setProfileDescription)
-
-  console.log(profileName, 'profileName')
-  console.log(profileDescription, 'profileDescription')
+  const photoUrl = userDataStore(state => state.photoUrl)
+  const setPhotoUrl = userDataStore(state => state.setPhotoUrl)
 
   return (
     <div className='p-8 flex flex-row gap-10 justify-around'>
@@ -51,6 +50,7 @@ const Profile = () => {
             type='photoUrl'
             name='name'
             className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
+            onChange={e => setPhotoUrl(e.target.value)}
           />
         </div>
       </div>
