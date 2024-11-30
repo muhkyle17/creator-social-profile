@@ -1,4 +1,5 @@
 import { IoIosArrowUp, IoIosArrowDown, IoIosAddCircleOutline } from 'react-icons/io'
+import { TiDelete } from 'react-icons/ti'
 
 const Links = () => {
   return (
@@ -9,12 +10,16 @@ const Links = () => {
       </div>
 
       <div className='relative w-[65%] h-fit'>
+        <div className='absolute top-1 -left-9 flex flex-col items-center gap-2'>
+          <IoIosArrowUp className='text-2xl opacity-65 cursor-pointer' />
+          <p className='text-2xl opacity-65'> 1</p>
+          <IoIosArrowDown className='text-2xl opacity-65 cursor-pointer' />
+        </div>
+        <div className='absolute -top-2 -right-2 z-50 w-5 h-5 bg-gray-600 rounded-full flex items-center justify-center'>
+          <TiDelete className='absolute text-3xl text-gray-400 cursor-pointer w-10 h-10' />
+        </div>
+
         <div className='bg-white p-6 rounded-lg drop-shadow-lg flex flex-col gap-5'>
-          <div className='absolute top-1 -left-9 flex flex-col items-center gap-2'>
-            <IoIosArrowUp className='text-2xl opacity-65 cursor-pointer' />
-            <p className='text-2xl opacity-65'> 1</p>
-            <IoIosArrowDown className='text-2xl opacity-65 cursor-pointer' />
-          </div>
           <div className='flex flex-col gap-1'>
             <label htmlFor='label' className='text-sm text-gray-700'>
               Label
