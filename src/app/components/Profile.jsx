@@ -1,4 +1,12 @@
+'use client'
+import userDataStore from '../hooks/userDataStore'
+
 const Profile = () => {
+  const profileName = userDataStore(state => state.profileName)
+  const setProfileName = userDataStore(state => state.setProfileName)
+
+  console.log(profileName, 'profileName')
+
   return (
     <div className='p-8 flex flex-row gap-10 justify-around'>
       <div className='w-[30%]'>
@@ -15,6 +23,7 @@ const Profile = () => {
             type='text'
             name='name'
             className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
+            onChange={e => setProfileName(e.target.value)}
           />
         </div>
         <div className='flex flex-col gap-1'>
