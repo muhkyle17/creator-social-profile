@@ -4,8 +4,11 @@ import userDataStore from '../hooks/userDataStore'
 const Profile = () => {
   const profileName = userDataStore(state => state.profileName)
   const setProfileName = userDataStore(state => state.setProfileName)
+  const profileDescription = userDataStore(state => state.profileDescription)
+  const setProfileDescription = userDataStore(state => state.setProfileDescription)
 
   console.log(profileName, 'profileName')
+  console.log(profileDescription, 'profileDescription')
 
   return (
     <div className='p-8 flex flex-row gap-10 justify-around'>
@@ -36,6 +39,7 @@ const Profile = () => {
             type='text'
             name='description'
             className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
+            onChange={e => setProfileDescription(e.target.value)}
           />
         </div>
         <div className='flex flex-col gap-1'>
