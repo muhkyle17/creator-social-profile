@@ -24,7 +24,7 @@ const SocialProfilePreview = () => {
   return (
     <div className='mt-10 xl:mt-0 bg-white h-full flex items-center justify-center'>
       <div className='min-h-[47rem] w-[350px] mx-auto flex items-center justify-center rounded-[3.5rem] ring-8 ring-black py-6 px-6'>
-        <div className='w-full flex flex-col gap-8 items-center'>
+        <div className='w-full min-h-[700px] overflow-scroll flex flex-col gap-8 items-center justify-start'>
           <div className='flex flex-col gap-2 text-center items-center'>
             {photoUrl && (
               <Image
@@ -46,11 +46,12 @@ const SocialProfilePreview = () => {
             </p>
           </div>
 
-          <div className='flex flex-row gap-5'>
+          <div className='flex flex-row gap-3 text-xl'>
             <FaFacebook className='text-[#1877F2]' />
             <FaTwitter className='text-[#1DA1F2]' />
             <FaInstagram className='text-[#f77737]' />
             <FaGithub />
+            <MdOutlineMailOutline />
             <FaTelegram className='text-[#24A1DE]' />
             <FaLinkedin className='text-[#0077B5]' />
             <FaYoutube className='text-[#CD201F]' />
