@@ -1,5 +1,5 @@
 import Profile from './components/Profile'
-import SocialProfilePreview from './components/SocialProfilePreview'
+import SocialProfilePreview from './components/SocialProfilePreview/SocialProfilePreview'
 import SocialLinks from './components/SocialLinks'
 import Links from './components/Links'
 
