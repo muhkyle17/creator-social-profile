@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import {
   FaFacebook,
   FaTwitter,
@@ -12,9 +13,8 @@ import {
 } from 'react-icons/fa'
 import { MdOutlineMailOutline } from 'react-icons/md'
 
-import Image from 'next/image'
-
 import userDataStore from '../../hooks/userDataStore'
+import ProfilePreview from './ProfilePreview'
 
 const SocialProfilePreview = () => {
   const profileName = userDataStore(state => state.profileName)
