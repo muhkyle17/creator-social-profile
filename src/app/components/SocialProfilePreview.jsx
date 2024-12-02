@@ -47,14 +47,14 @@ const SocialProfilePreview = () => {
           </div>
 
           <div className='flex flex-row gap-5'>
-            <FaFacebook />
-            <FaTwitter />
-            <FaInstagram />
+            <FaFacebook className='text-[#1877F2]' />
+            <FaTwitter className='text-[#1DA1F2]' />
+            <FaInstagram className='text-[#f77737]' />
             <FaGithub />
-            <FaTelegram />
-            <FaLinkedin />
-            <FaYoutube />
-            <FaWhatsapp />
+            <FaTelegram className='text-[#24A1DE]' />
+            <FaLinkedin className='text-[#0077B5]' />
+            <FaYoutube className='text-[#CD201F]' />
+            <FaWhatsapp className='text-[#4FCE5D]' />
           </div>
         </div>
       </div>
