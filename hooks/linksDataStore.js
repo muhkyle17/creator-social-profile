@@ -1,23 +1,21 @@
 import { create } from 'zustand'
 
 const linksDataStore = create(set => ({
-  links: [
-    {
-      id: 0,
-      label: '',
-      URL: '',
-    },
-  ],
-  setNewLink: newLink =>
+  links: [],
+  setNewLink: newLink => {
+    console.log(newLink, 'newLink')
     set(state => ({
-      links: state.links.map(link => (link.id === newLink.id ? { ...link, ...newLink } : link)),
-    })),
+      links: state.links === 0 ? newLink : [...state.links, newLink],
+    }))
+  },
+
   setUpdateLink: updatedLink =>
     set(state => ({
       links: state.links.map(link =>
         link.id === updatedLink.id ? { ...link, ...updatedLink } : link
       ),
     })),
+
   setDeleteLink: deletedLink =>
     set(state => ({
       links: state.links.filter(link =>
