@@ -1,39 +1,62 @@
+'use client'
 import { IoIosArrowUp, IoIosArrowDown, IoIosAddCircleOutline } from 'react-icons/io'
 import { TiDelete } from 'react-icons/ti'
 
 import linksDataStore from '@/../hooks/linksDataStore'
 
-const Link = () => {
-  return (
-    <div className='bg-white p-6 rounded-lg drop-shadow-lg flex flex-col gap-5'>
-      <div className='flex flex-col gap-1'>
-        <label htmlFor='label' className='text-sm text-gray-700'>
-          Label
-        </label>
-        <input
-          aria-label='Label Input'
-          type='text'
-          name='label'
-          className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
-        />
-      </div>
+const Link = ({ setUpdateLink, setDeleteLink }) => {
+  console.log(setUpdateLink, 'setUpdateLink')
+  console.log(setDeleteLink, 'setDeleteLink')
 
-      <div className='flex flex-col gap-1'>
-        <label htmlFor='url' className='text-sm text-gray-700'>
-          URL
-        </label>
-        <input
-          aria-label='Url Input'
-          type='url'
-          name='url'
-          className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
-        />
+  return (
+    <div className='relative h-fit'>
+      <div className='bg-white p-6 rounded-lg drop-shadow-lg flex flex-col gap-5'>
+        <div className='flex flex-col gap-1'>
+          <div className='absolute top-1 -left-9 flex flex-col items-center gap-2'>
+            <IoIosArrowUp className='text-2xl opacity-65 cursor-pointer' />
+            <p className='text-2xl opacity-65'> 1</p>
+            <IoIosArrowDown className='text-2xl opacity-65 cursor-pointer' />
+          </div>
+
+          <div className='absolute -top-2 -right-2 z-50 w-5 h-5 bg-gray-600 rounded-full flex items-center justify-center'>
+            <TiDelete className='absolute text-3xl text-gray-400 cursor-pointer w-10 h-10' />
+          </div>
+
+          <label htmlFor='label' className='text-sm text-gray-700'>
+            Label
+          </label>
+
+          <input
+            aria-label='Label Input'
+            type='text'
+            name='label'
+            className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
+          />
+        </div>
+
+        <div className='flex flex-col gap-1'>
+          <label htmlFor='url' className='text-sm text-gray-700'>
+            URL
+          </label>
+          <input
+            aria-label='Url Input'
+            type='url'
+            name='url'
+            className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
+          />
+        </div>
       </div>
     </div>
   )
 }
 
 const Links = () => {
+  const linksStore = linksDataStore()
+  const { setNewLink, setUpdateLink, setDeleteLink } = linksStore
+  const { links } = linksStore
+
+  console.log(linksStore, 'linksStore')
+
   return (
     <div className='p-8 flex flex-row gap-10 justify-around'>
       <div className='w-[30%]'>
@@ -41,17 +64,10 @@ const Links = () => {
         <h2 className='opacity-60'>Add some links here</h2>
       </div>
 
-      <div className='relative w-[65%] h-fit'>
-        <div className='absolute top-1 -left-9 flex flex-col items-center gap-2'>
-          <IoIosArrowUp className='text-2xl opacity-65 cursor-pointer' />
-          <p className='text-2xl opacity-65'> 1</p>
-          <IoIosArrowDown className='text-2xl opacity-65 cursor-pointer' />
-        </div>
-        <div className='absolute -top-2 -right-2 z-50 w-5 h-5 bg-gray-600 rounded-full flex items-center justify-center'>
-          <TiDelete className='absolute text-3xl text-gray-400 cursor-pointer w-10 h-10' />
-        </div>
-
-        <Link />
+      <div className='w-[65%]'>
+        {links.map(link => (
+          <Link key={link.id} setUpdateLink={setUpdateLink} setDeleteLink={setDeleteLink} />
+        ))}
 
         <button
           type='button'
