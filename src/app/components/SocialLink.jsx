@@ -1,6 +1,6 @@
 'use client'
 
-import socialLinksDataStore from '../hooks/socialLinksDataStore'
+import socialLinksDataStore from '@/../hooks/socialLinksDataStore'
 
 const SocialLink = ({ inputName, labelName, icon }) => {
   const setLinkHandlers = {

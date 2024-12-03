@@ -1,5 +1,5 @@
 'use client'
-import userDataStore from '../hooks/userProfileDataStore'
+import userDataStore from '@/../hooks/userProfileDataStore'
 
 const Profile = () => {
   const setProfileName = userDataStore(state => state.setProfileName)

@@ -1,6 +1,7 @@
 'use client'
 
-import userProfileDataStore from '../../hooks/userProfileDataStore'
+import userProfileDataStore from '@/../hooks/userProfileDataStore'
+
 import ProfilePreview from './ProfilePreview'
 import SocialLinksPreview from './SocialLinksPreview'
 

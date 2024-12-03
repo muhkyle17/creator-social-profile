@@ -1,6 +1,6 @@
 'use client'
 
-import useStore from '../hooks/useStore'
+import useStore from '@/../hooks/useStore'
 
 const IncreaseBearPopulation = () => {
   const bears = useStore(state => state.bears)
