@@ -1,14 +1,14 @@
 'use client'
 
-import userDataStore from '../../hooks/userDataStore'
+import userProfileDataStore from '../../hooks/userProfileDataStore'
 import ProfilePreview from './ProfilePreview'
 import SocialLinksPreview from './SocialLinksPreview'
 
 const SocialProfilePreview = () => {
   // Profile state
-  const profileName = userDataStore(state => state.profileName)
-  const profileDescription = userDataStore(state => state.profileDescription)
-  const photoUrl = userDataStore(state => state.photoUrl)
+  const profileName = userProfileDataStore(state => state.profileName)
+  const profileDescription = userProfileDataStore(state => state.profileDescription)
+  const photoUrl = userProfileDataStore(state => state.photoUrl)
 
   return (
     <div className='mt-10 xl:mt-0 bg-white h-full flex items-center justify-center'>
