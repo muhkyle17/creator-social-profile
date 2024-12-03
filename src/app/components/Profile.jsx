@@ -6,7 +6,6 @@ const Profile = () => {
   const setProfileDescription = userDataStore(state => state.setProfileDescription)
   const setPhotoUrl = userDataStore(state => state.setPhotoUrl)
   const handleChange = (value, e) => {
-    console.log(value, 'value')
     if (value === 'profileName') setProfileName(e.target.value)
     if (value === 'description') setProfileDescription(e.target.value)
     if (value === 'photoUrl') setPhotoUrl(e.target.value)
