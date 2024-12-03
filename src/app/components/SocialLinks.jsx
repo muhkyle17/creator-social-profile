@@ -12,7 +12,6 @@ import {
 } from 'react-icons/fa'
 import { MdOutlineMailOutline } from 'react-icons/md'
 
-import socialLinksDataStore from '../hooks/socialLinksDataStore'
 import SocialLink from './SocialLink'
 
 const SocialLinks = () => {
