@@ -1,24 +1,35 @@
 import { create } from 'zustand'
 
-const socialLinksDataStore = create(set => ({
-  facebookLink: '',
-  twitterLink: '',
-  instagramLink: '',
-  githubLink: '',
-  telegramLink: '',
-  linkedinLink: '',
-  emailLink: '',
-  youtubeLink: '',
-  whastappLink: '',
-  setFacebookLink: facebookLink => set({ facebookLink }),
-  setTwitterLink: twitterLink => set({ twitterLink }),
-  setInstagramLink: instagramLink => set({ instagramLink }),
-  setGithubLink: githubLink => set({ githubLink }),
-  setTelegramLink: telegramLink => set({ telegramLink }),
-  setLinkedinLink: linkedinLink => set({ linkedinLink }),
-  setEmailLink: emailLink => set({ emailLink }),
-  setYoutubeLink: youtubeLink => set({ youtubeLink }),
-  setWhatsAppLink: whatsAppLink => set({ whatsAppLink }),
-}))
+const linkKeys = [
+  'facebookLink',
+  'twitterLink',
+  'instagramLink',
+  'githubLink',
+  'telegramLink',
+  'linkedinLink',
+  'emailLink',
+  'youtubeLink',
+  'whatsAppLink',
+]
+
+const socialLinksDataStore = create(set => {
+  // Generate initial state using map
+  const initialState = Object.fromEntries(linkKeys.map(key => [key, '']))
+
+  // Generate setters using map
+  const setters = Object.fromEntries(
+    linkKeys.map(key => [
+      `set${key.charAt(0).toUpperCase() + key.slice(1)}`,
+      value => set({ [key]: value }),
+    ])
+  )
+
+  console.log(initialState, 'initialState')
+
+  return {
+    ...initialState,
+    ...setters,
+  }
+})
 
 export default socialLinksDataStore
