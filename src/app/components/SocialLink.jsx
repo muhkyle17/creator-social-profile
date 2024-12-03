@@ -3,31 +3,29 @@
 import socialLinksDataStore from '../hooks/socialLinksDataStore'
 
 const SocialLink = ({ inputName, labelName, icon }) => {
-  const setFacebookLink = socialLinksDataStore(state => state.setFacebookLink)
-  const setTwitterLink = socialLinksDataStore(state => state.setTwitterLink)
-  const setInstagramLink = socialLinksDataStore(state => state.setInstagramLink)
-  const setGithubLink = socialLinksDataStore(state => state.setGithubLink)
-  const setTelegramLink = socialLinksDataStore(state => state.setTelegramLink)
-  const setLinkedinLink = socialLinksDataStore(state => state.setLinkedinLink)
-  const setEmailLink = socialLinksDataStore(state => state.setEmailLink)
-  const setYoutubeLink = socialLinksDataStore(state => state.setYoutubeLink)
-  const setWhatsAppLink = socialLinksDataStore(state => state.setWhatsAppLink)
+  const setLinkHandlers = {
+    facebook: socialLinksDataStore(state => state.setFacebookLink),
+    twitter: socialLinksDataStore(state => state.setTwitterLink),
+    instagram: socialLinksDataStore(state => state.setInstagramLink),
+    github: socialLinksDataStore(state => state.setGithubLink),
+    telegram: socialLinksDataStore(state => state.setTelegramLink),
+    linkedin: socialLinksDataStore(state => state.setLinkedinLink),
+    email: socialLinksDataStore(state => state.setEmailLink),
+    youtube: socialLinksDataStore(state => state.setYoutubeLink),
+    whatsapp: socialLinksDataStore(state => state.setWhatsAppLink),
+  }
 
+  // Unified change handler
   const handleChange = (value, e) => {
-    if (value === 'facebook') setFacebookLink(e.target.value)
-    if (value === 'twitter') setTwitterLink(e.target.value)
-    if (value === 'instagram') setInstagramLink(e.target.value)
-    if (value === 'github') setGithubLink(e.target.value)
-    if (value === 'telegram') setTelegramLink(e.target.value)
-    if (value === 'linkedin') setLinkedinLink(e.target.value)
-    if (value === 'email') setEmailLink(e.target.value)
-    if (value === 'youtube') setYoutubeLink(e.target.value)
-    if (value === 'whatsapp') setWhatsAppLink(e.target.value)
+    const setLink = setLinkHandlers[value]
+    if (setLink) {
+      setLink(e.target.value)
+    }
   }
 
   return (
     <div className='flex flex-col gap-2 w-1/2'>
-      <label htmlFor='inputName' className='text-sm text-gray-700'>
+      <label htmlFor={inputName} className='text-sm text-gray-700'>
         {labelName}
       </label>
       <div className='flex flex-row items-center w-full'>
@@ -39,6 +37,7 @@ const SocialLink = ({ inputName, labelName, icon }) => {
           type='text'
           onChange={e => handleChange(inputName, e)}
           name={inputName}
+          id={inputName}
           className='bg-white p-2 text-sm rounded-md rounded-l-none border-l-0 border border-opacity-20 border-black w-full'
         />
       </div>
