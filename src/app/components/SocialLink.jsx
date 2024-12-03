@@ -13,8 +13,6 @@ const SocialLink = ({ inputName, labelName, icon }) => {
   const setYoutubeLink = socialLinksDataStore(state => state.setYoutubeLink)
   const setWhatsAppLink = socialLinksDataStore(state => state.setWhatsAppLink)
 
-  const state = socialLinksDataStore(state => state)
-
   const handleChange = (value, e) => {
     if (value === 'facebook') setFacebookLink(e.target.value)
     if (value === 'twitter') setTwitterLink(e.target.value)
