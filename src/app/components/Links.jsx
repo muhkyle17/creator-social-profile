@@ -1,6 +1,36 @@
 import { IoIosArrowUp, IoIosArrowDown, IoIosAddCircleOutline } from 'react-icons/io'
 import { TiDelete } from 'react-icons/ti'
 
+const Link = () => {
+  return (
+    <div className='bg-white p-6 rounded-lg drop-shadow-lg flex flex-col gap-5'>
+      <div className='flex flex-col gap-1'>
+        <label htmlFor='label' className='text-sm text-gray-700'>
+          Label
+        </label>
+        <input
+          aria-label='Label Input'
+          type='text'
+          name='label'
+          className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
+        />
+      </div>
+
+      <div className='flex flex-col gap-1'>
+        <label htmlFor='url' className='text-sm text-gray-700'>
+          URL
+        </label>
+        <input
+          aria-label='Url Input'
+          type='url'
+          name='url'
+          className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
+        />
+      </div>
+    </div>
+  )
+}
+
 const Links = () => {
   return (
     <div className='p-8 flex flex-row gap-10 justify-around'>
@@ -19,31 +49,7 @@ const Links = () => {
           <TiDelete className='absolute text-3xl text-gray-400 cursor-pointer w-10 h-10' />
         </div>
 
-        <div className='bg-white p-6 rounded-lg drop-shadow-lg flex flex-col gap-5'>
-          <div className='flex flex-col gap-1'>
-            <label htmlFor='label' className='text-sm text-gray-700'>
-              Label
-            </label>
-            <input
-              aria-label='Label Input'
-              type='text'
-              name='label'
-              className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
-            />
-          </div>
-
-          <div className='flex flex-col gap-1'>
-            <label htmlFor='url' className='text-sm text-gray-700'>
-              URL
-            </label>
-            <input
-              aria-label='Url Input'
-              type='url'
-              name='url'
-              className='border border-opacity-20 border-black bg-white rounded-md p-3 text-xs'
-            />
-          </div>
-        </div>
+        <Link />
 
         <button
           type='button'
