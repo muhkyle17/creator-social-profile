@@ -24,8 +24,6 @@ const socialLinksDataStore = create(set => {
     ])
   )
 
-  console.log(initialState, 'initialState')
-
   return {
     ...initialState,
     ...setters,
